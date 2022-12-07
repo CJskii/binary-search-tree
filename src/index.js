@@ -11,6 +11,7 @@ class Tree {
     if (start > end) return null;
     const mid = Math.floor((start + end) / 2);
     const root = new Node(arr[mid]);
+    // split array and call recursively
     root.left = this.buildTree(arr, start, mid - 1);
     root.right = this.buildTree(arr, mid + 1, end);
     return root;
@@ -211,22 +212,23 @@ class Tree {
   }
 }
 
-const tree = new Tree([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-tree.insert(10);
-tree.insert("-1");
-tree.insert("-2");
-tree.insert("-4");
-tree.insert("-6");
+//const tree = new Tree([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+//const tree2 = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
+//tree.insert(10);
+//tree.insert("-1");
+//tree.insert("-2");
+//tree.insert("-4");
+//tree.insert("-6");
 //tree.remove("7");
 
-prettyPrint(tree.root);
+//prettyPrint(tree.root);
 //console.log(tree.inorder());
 //console.log(tree.preorder());
 //console.log(tree.postorder());
 //console.log(tree.height());
 //console.log(tree.find(2));
 //console.log(tree.depth(tree.find(10)));
-console.log(tree.isBalanced());
-tree.rebalance();
-console.log(tree.isBalanced());
-prettyPrint(tree.root);
+//console.log(tree.isBalanced());
+//tree.rebalance();
+//console.log(tree.isBalanced());
+//prettyPrint(tree.root);
